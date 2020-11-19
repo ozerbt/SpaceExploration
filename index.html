@@ -8,18 +8,28 @@
         #gameScreen{
             border: 1px solid black;
         }
+         img {
+            display:none;
+        } 
+        canvas{
+            background-image: url('assets/images/Background.png');
+        }
     </style>
 </head>
 
 
 <body>
 
+    <img id = "spaceship_img" height ="10px" width="10px" src = "assets/images/Spaceship01.png">
+
+    <img id = "main_spaceship" height ="10px" width="10px" src = "assets/images/mainSpaceship.png">
 
     <canvas id="gameScreen"  width="1500px" height="800px"></canvas>
 
-
+    <h1>Controls:</h1>
+    <p><b>To move: A and D</b></p>
+    <p><b>Shooting: Coming Soon!</b></p>
     <script type="module" src="src/index.js"></script>
 </body>
-
 
 </html>

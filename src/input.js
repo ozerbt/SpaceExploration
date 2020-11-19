@@ -13,6 +13,22 @@ export default class inputHandler {
                     spaceship.moveRight();
                     break;
             }
+        });
+
+        document.addEventListener('keyup', (event) => {
+
+            //65 A 68 D
+            switch(event.keyCode){
+                case 65:
+                    if(spaceship.speed < 0)
+                    spaceship.stop()
+                    break;
+                
+                case 68:
+                    if(spaceship.speed > 0)
+                    spaceship.stop();
+                    break;
+            }
         })
     }
 
