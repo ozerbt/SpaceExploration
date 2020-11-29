@@ -1,6 +1,6 @@
 export default class Spaceship {
-    constructor(gameWidth, gameHeight) {
-        this.gameWidth = gameWidth
+    constructor(game) {
+        this.gameWidth = game.gameWidth
 
         this.width = 50;
 
@@ -11,10 +11,11 @@ export default class Spaceship {
         this.speed = 0
 
         this.position = {
-            x: gameWidth / 2 - this.width / 2,
-            y: gameHeight - this.height - 10
+            x: game.gameWidth / 2 - this.width / 2,
+            y: game.gameHeight - this.height - 10
         }
         this.image = document.getElementById("main_spaceship")
+        this.flame_image = document.getElementById("flame")
     }
 
     moveLeft() {
@@ -24,10 +25,12 @@ export default class Spaceship {
     moveRight(){
         this.speed = this.maxSpeed
     }
+    shoot(){
+        
+    }
     draw(ctx){
         ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
-
-
+        ctx.drawImage(this.flame_image, this.position.x, this.position.y, this.width, this.height)
     }
 
     update(deltaTime){

@@ -12,6 +12,10 @@ export default class inputHandler {
                 case 68:
                     spaceship.moveRight();
                     break;
+                
+                case 32:
+                    spaceship.shoot();
+                    break;
             }
         });
 

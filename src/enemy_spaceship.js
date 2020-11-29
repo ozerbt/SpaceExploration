@@ -1,5 +1,5 @@
 export default class enemyShip {
-    constructor(gameWidth, gameHeight){
+    constructor(game){
         this.image = document.getElementById("spaceship_img")
 
         this.position = {
@@ -11,8 +11,8 @@ export default class enemyShip {
             y: 2
         }
         this.size = 100
-        this.gameWidth = gameWidth
-        this.gameHeight = gameHeight
+        this.gameWidth = game.gameWidth
+        this.gameHeight = game.gameHeight
     }
 
     draw(ctx) {

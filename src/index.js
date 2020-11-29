@@ -1,6 +1,7 @@
 import Spaceship from "/src/spaceship.js";
 import inputHandler from "/src/input.js";
 import enemyShip from "/src/enemy_spaceship.js"
+import Game from "/src/game.js";
 
 let canvas = document.getElementById("gameScreen")
 
@@ -14,7 +15,8 @@ const GAME_HEIGHT = 800;
 
 let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT)
 let enemy_Ship = new enemyShip(GAME_WIDTH, GAME_HEIGHT);
-
+let game = new Game(GAME_WIDTH, GAME_HEIGHT)
+game.start();
 
 
 ctx.clearRect(0, 0, 1500, 800)
@@ -35,11 +37,8 @@ function gameLoop(timestamp) {
     lastTime = timestamp;
 
     ctx.clearRect(0, 0, GAME_HEIGHT + 1000, GAME_HEIGHT + 1000)
-    spaceship.update(deltaTime)
-    spaceship.draw(ctx)
-
-    enemy_Ship.update(deltaTime)
-    enemy_Ship.draw(ctx)
+    game.update(deltaTime)
+    game.draw(ctx)
 
     requestAnimationFrame(gameLoop)
 }
