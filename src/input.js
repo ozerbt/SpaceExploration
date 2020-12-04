@@ -1,6 +1,6 @@
 export default class inputHandler {
 
-    constructor(spaceship){
+    constructor(spaceship, shot){
         document.addEventListener('keydown', (event) => {
 
             //65 A 68 D
@@ -13,9 +13,9 @@ export default class inputHandler {
                     spaceship.moveRight();
                     break;
                 
-                case 32:
-                    spaceship.shoot();
-                    break;
+                // case 87:
+                //     shot.update();
+                //     break;
             }
         });
 

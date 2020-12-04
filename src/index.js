@@ -2,6 +2,7 @@ import Spaceship from "/src/spaceship.js";
 import inputHandler from "/src/input.js";
 import enemyShip from "/src/enemy_spaceship.js"
 import Game from "/src/game.js";
+import Shot from "/src/shot.js"
 
 let canvas = document.getElementById("gameScreen")
 
@@ -14,10 +15,12 @@ const GAME_WIDTH = 1500;
 const GAME_HEIGHT = 800;
 
 let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT)
+let shot = new Shot(GAME_WIDTH, GAME_HEIGHT)
 let enemy_Ship = new enemyShip(GAME_WIDTH, GAME_HEIGHT);
 let game = new Game(GAME_WIDTH, GAME_HEIGHT)
 game.start();
-
+let gameScreen = document.getElementById('gameScreen')
+let flame_image = document.getElementById("flame")
 
 ctx.clearRect(0, 0, 1500, 800)
 
@@ -27,9 +30,7 @@ new inputHandler(spaceship);
 spaceship.draw(ctx);
 
 let lastTime = 0;
-
-
-
+let started = false;
 
 function gameLoop(timestamp) {
     let deltaTime = timestamp - lastTime

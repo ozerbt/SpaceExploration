@@ -1,6 +1,7 @@
 import Spaceship from "/src/spaceship.js";
 import inputHandler from "/src/input.js";
 import enemyShip from "/src/enemy_spaceship.js"
+import Shot from "/src/shot.js"
 
 
 
@@ -25,8 +26,9 @@ export default class Game {
     start() {
         this.enemy_ship = new enemyShip(this);
         this.spaceship = new Spaceship(this)
+        this.shot = new Shot(this)
 
-        this.gameObjects = [this.enemy_ship, this.spaceship]
+        this.gameObjects = [this.enemy_ship, this.spaceship, this.shot]
 
         new inputHandler(this.spaceship)
         }

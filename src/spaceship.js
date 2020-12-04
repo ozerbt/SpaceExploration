@@ -25,12 +25,8 @@ export default class Spaceship {
     moveRight(){
         this.speed = this.maxSpeed
     }
-    shoot(){
-        
-    }
     draw(ctx){
         ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height)
-        ctx.drawImage(this.flame_image, this.position.x, this.position.y, this.width, this.height)
     }
 
     update(deltaTime){
